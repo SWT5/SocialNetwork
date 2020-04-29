@@ -18,6 +18,8 @@ namespace SocialNetwork.Models
 
         public List<User> BlockedList { get; set; }
 
+
+        // siger i browser at den forventer circle men indsætter i consol som en string, skal det være en string der skal være i listen? laver de andre klasser først inden vi tester videre på dette
         public List<Circle> Circles { get; set; }
 
 
