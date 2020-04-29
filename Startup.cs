@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using SocialNetwork.Models;
 
 namespace SocialNetwork
 {
@@ -25,6 +27,13 @@ namespace SocialNetwork
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // requires using Microsoft.Extensions.Options
+            services.Configure<SocialNetworkDatabaseSettings>(
+                Configuration.GetSection(nameof(SocialNetworkDatabaseSettings)));
+
+            services.AddSingleton<ISocialNetworkDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<SocialNetworkDatabaseSettings>>().Value);
+
             services.AddControllers();
         }
 
