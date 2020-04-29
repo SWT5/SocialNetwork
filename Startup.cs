@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SocialNetwork.Models;
+using SocialNetwork.Services;
 
 namespace SocialNetwork
 {
@@ -33,6 +34,8 @@ namespace SocialNetwork
 
             services.AddSingleton<ISocialNetworkDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<SocialNetworkDatabaseSettings>>().Value);
+
+            services.AddSingleton<UserService>();
 
             services.AddControllers();
         }
