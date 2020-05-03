@@ -10,7 +10,7 @@ namespace SocialNetwork.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PostsController : Controller
+    public class PostsController : ControllerBase
     {
         private readonly PostService _postService;
 

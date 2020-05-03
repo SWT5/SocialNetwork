@@ -3,7 +3,7 @@ using SocialNetwork.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
-namespace BooksApi.Controllers
+namespace SocialNetwork.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
