@@ -42,8 +42,8 @@ namespace SocialNetwork.Services
 
 
         //Different Remove methods************************
-        public void Remove(Circle cirleIn) =>
-            _circles.DeleteOne(circle => circle.CircleName == cirleIn.CircleName);
+        public void Remove(Circle circleIn) =>
+            _circles.DeleteOne(circle => circle.CircleName == circleIn.CircleName);
 
         public void Remove(string circleName) =>
             _circles.DeleteOne(circle => circle.CircleName == circleName);
