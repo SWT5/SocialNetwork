@@ -9,15 +9,13 @@ using SocialNetwork.Services;
 
 namespace SocialNetwork.Controllers
 {
-    public class FeedController
-    {
         [Route("api/[controller]")]
         [ApiController]
-        public class BooksController : ControllerBase
+        public class FeedController : ControllerBase
         {
             private readonly FeedService _feedService;
 
-            public BooksController(FeedService feedService)
+            public FeedController(FeedService feedService)
             {
                 _feedService = feedService;
             }
@@ -26,7 +24,7 @@ namespace SocialNetwork.Controllers
             public ActionResult<List<Feed>> Get() =>
                 _feedService.Get();
 
-            [HttpGet("{id:length(24)}", Name = "GetBook")]
+            [HttpGet("{id:length(24)}", Name = "GetFeed")]
             public ActionResult<Feed> Get(string id)
             {
                 var feed = _feedService.Get(id);
@@ -77,5 +75,5 @@ namespace SocialNetwork.Controllers
                 return NoContent();
             }
         }
-    }
+    
 }
