@@ -38,6 +38,7 @@ namespace SocialNetwork
             // add flere til singleton her? samt controllers? 
             services.AddSingleton<UserService>();
             services.AddSingleton<WallService>();
+            services.AddSingleton<PostService>();
 
             services.AddControllers();
         }
