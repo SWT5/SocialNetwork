@@ -40,6 +40,7 @@ namespace SocialNetwork
             services.AddSingleton<WallService>();
             services.AddSingleton<PostService>();
             services.AddSingleton<CircleService>();
+            services.AddSingleton<FeedService>();
 
             services.AddControllers();
         }
