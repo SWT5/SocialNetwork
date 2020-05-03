@@ -20,7 +20,7 @@ namespace BooksApi.Controllers
         public ActionResult<List<Circle>> Get() =>
             _circleService.Get();
 
-        [HttpGet("{id:length(24)}", Name = "GetCircle")]
+        [HttpGet("{CircleName:length(24)}", Name = "GetCircle")]
         public ActionResult<Circle> Get(string id)
         {
             var circle = _circleService.Get(id);
@@ -40,7 +40,7 @@ namespace BooksApi.Controllers
             return CreatedAtRoute("GetCircle", new { id = circle.CircleName.ToString() }, circle);
         }
 
-        [HttpPut("{id:length(24)}")]
+        [HttpPut("{CircleName:length(24)}")]
         public IActionResult Update(string id, Circle circleIn)
         {
             var circle = _circleService.Get(id);
@@ -55,7 +55,7 @@ namespace BooksApi.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id:length(24)}")]
+        [HttpDelete("{CircleName:length(24)}")]
         public IActionResult Delete(string id)
         {
             var circle = _circleService.Get(id);
