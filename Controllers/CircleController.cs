@@ -37,28 +37,28 @@ namespace SocialNetwork.Controllers
         public ActionResult<Circle> Create(Circle circle)
         {
             _circleService.Create(circle);
-            return CreatedAtRoute("GetCircle", new { id = circle.CircleName.ToString() }, circle);
+            return CreatedAtRoute("GetCircle", new { CircleName = circle.CircleName.ToString() }, circle);
         }
 
         [HttpPut("{CircleName:length(24)}")]
-        public IActionResult Update(string id, Circle circleIn)
+        public IActionResult Update(string circleName, Circle circleIn)
         {
-            var circle = _circleService.Get(id);
+            var circle = _circleService.Get(circleName);
 
             if (circle == null)
             {
                 return NotFound();
             }
 
-            _circleService.Update(id, circleIn);
+            _circleService.Update(circleName, circleIn);
 
             return NoContent();
         }
 
         [HttpDelete("{CircleName:length(24)}")]
-        public IActionResult Delete(string id)
+        public IActionResult Delete(string CircleName)
         {
-            var circle = _circleService.Get(id);
+            var circle = _circleService.Get(CircleName);
 
             if (circle == null)
             {

@@ -11,7 +11,7 @@ namespace SocialNetwork.Services
     {
         private readonly IMongoCollection<Circle> _circles;
 
-        public CircleService(SocialNetworkDatabaseSettings settings)
+        public CircleService(ISocialNetworkDatabaseSettings settings)
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
