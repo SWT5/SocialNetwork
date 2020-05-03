@@ -16,7 +16,7 @@ namespace SocialNetwork.Services
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
 
-            _feed = database.GetCollection<Feed>(settings.UserCollectionName);
+            _feed = database.GetCollection<Feed>(settings.FeedCollection);
         }
 
         public List<Feed> Get() =>
