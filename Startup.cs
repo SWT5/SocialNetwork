@@ -35,7 +35,9 @@ namespace SocialNetwork
             services.AddSingleton<ISocialNetworkDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<SocialNetworkDatabaseSettings>>().Value);
 
+            // add flere til singleton her? samt controllers? 
             services.AddSingleton<UserService>();
+            services.AddSingleton<WallService>();
 
             services.AddControllers();
         }
