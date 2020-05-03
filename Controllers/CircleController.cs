@@ -7,11 +7,11 @@ namespace BooksApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BooksController : ControllerBase
+    public class CircleController : ControllerBase
     {
         private readonly CircleService _circleService;
 
-        public BooksController(CircleService circleService)
+        public CircleController(CircleService circleService)
         {
             _circleService = circleService;
         }
